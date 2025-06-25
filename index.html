@@ -5,124 +5,363 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BarBot - Asistente IA para Barbosa, Antioquia</title>
     <meta name="description" content="BarBot es tu asistente de inteligencia artificial para descubrir restaurantes, tiendas, atracciones y servicios en Barbosa, Antioquia.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'barbot-blue': '#1e40af',
+                        'barbot-green': '#10b981',
+                        'barbot-orange': '#f59e0b',
+                        'barbosa-primary': '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <nav>
-            <h1>BarBot</h1>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#que-es">¿Qué es BarBot?</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#barbosa">Sobre Barbosa</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-barbot-blue">🤖 BarBot</h1>
+                </div>
+                <div class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#inicio" class="text-gray-700 hover:text-barbot-blue transition-colors font-medium">Inicio</a></li>
+                        <li><a href="#que-es" class="text-gray-700 hover:text-barbot-blue transition-colors font-medium">¿Qué es BarBot?</a></li>
+                        <li><a href="#servicios" class="text-gray-700 hover:text-barbot-blue transition-colors font-medium">Servicios</a></li>
+                        <li><a href="#barbosa" class="text-gray-700 hover:text-barbot-blue transition-colors font-medium">Sobre Barbosa</a></li>
+                        <li><a href="#contacto" class="text-gray-700 hover:text-barbot-blue transition-colors font-medium">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button class="text-gray-700 hover:text-barbot-blue focus:outline-none focus:text-barbot-blue">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="inicio">
-        <h1>BarBot</h1>
-        <h2>Tu Asistente IA para Barbosa, Antioquia</h2>
-        <p>Descubre restaurantes, tiendas, atracciones y servicios en el hermoso municipio de Barbosa con la ayuda de inteligencia artificial.</p>
-        <button>Comenzar a Explorar</button>
-        <button>Ver Demo</button>
+    <section id="inicio" class="bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="absolute top-10 left-10 w-20 h-20 bg-white opacity-10 rounded-full animate-pulse"></div>
+                <div class="absolute top-32 right-20 w-16 h-16 bg-yellow-400 opacity-20 rounded-full animate-bounce"></div>
+                <div class="absolute bottom-20 left-20 w-12 h-12 bg-green-400 opacity-15 rounded-full animate-pulse"></div>
+                <div class="absolute bottom-10 right-10 w-24 h-24 bg-pink-400 opacity-10 rounded-full animate-bounce"></div>
+            </div>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
+            <div class="text-center">
+                <div class="mb-8">
+                    <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-white bg-opacity-20 text-white mb-6">
+                        🇨🇴 Barbosa, Antioquia • Asistente IA
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+                    <span class="block">🤖 BarBot</span>
+                </h1>
+                
+                <h2 class="text-xl sm:text-2xl lg:text-3xl font-light mb-8 max-w-3xl mx-auto">
+                    Tu Asistente IA para <span class="font-semibold text-yellow-300">Barbosa, Antioquia</span>
+                </h2>
+                
+                <p class="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-12 leading-relaxed">
+                    Descubre restaurantes, tiendas, atracciones y servicios en el hermoso municipio de Barbosa con la ayuda de inteligencia artificial.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button class="bg-white text-barbot-blue px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-xl">
+                        🚀 Comenzar a Explorar
+                    </button>
+                    <button class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-barbot-blue transform hover:scale-105 transition-all duration-200">
+                        🎥 Ver Demo
+                    </button>
+                </div>
+                
+                <div class="mt-16 flex flex-col sm:flex-row justify-center items-center gap-8 text-sm text-gray-300">
+                    <div class="flex items-center gap-2">
+                        📍 <span>36 km de Medellín</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        🌡️ <span>22.2°C promedio</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        👥 <span>56,505 habitantes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
     </section>
 
     <!-- Qué es BarBot -->
-    <section id="que-es">
-        <h2>¿Qué es BarBot?</h2>
-        <p>BarBot es un asistente de inteligencia artificial especializado en el municipio de Barbosa, Antioquia. Te ayuda a encontrar la mejor información sobre:</p>
-        <ul>
-            <li>Restaurantes y lugares para comer</li>
-            <li>Tiendas y comercios locales</li>
-            <li>Atracciones turísticas</li>
-            <li>Servicios públicos y privados</li>
-            <li>Eventos y festividades</li>
-            <li>Información general del municipio</li>
-        </ul>
+    <section id="que-es" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Qué es BarBot?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    BarBot es un asistente de inteligencia artificial especializado en el municipio de Barbosa, Antioquia. 
+                    Te ayuda a encontrar la mejor información sobre:
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🍽️</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Restaurantes y lugares para comer</h3>
+                    <p class="text-gray-600">Encuentra los mejores lugares para disfrutar la gastronomía barboseña</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Tiendas y comercios locales</h3>
+                    <p class="text-gray-600">Descubre negocios locales y centros comerciales del municipio</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🏖️</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Atracciones turísticas</h3>
+                    <p class="text-gray-600">Explora los charcos, parques y sitios de interés de Barbosa</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Servicios públicos y privados</h3>
+                    <p class="text-gray-600">Información sobre servicios esenciales y entidades del municipio</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">🎉</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Eventos y festividades</h3>
+                    <p class="text-gray-600">Mantente al día con las celebraciones y eventos culturales</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-4xl mb-4">ℹ️</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Información general del municipio</h3>
+                    <p class="text-gray-600">Datos útiles, historia y todo lo que necesitas saber sobre Barbosa</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Servicios -->
-    <section id="servicios">
-        <h2>Servicios de BarBot</h2>
-        
-        <div>
-            <h3>Gastronomía Local</h3>
-            <p>Encuentra los mejores restaurantes, cafeterías y lugares de comida típica antioqueña en Barbosa.</p>
-        </div>
+    <section id="servicios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Servicios de BarBot</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Descubre todo lo que Barbosa tiene para ofrecer con la ayuda de tu asistente IA
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🍴</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Gastronomía Local</h3>
+                    <p class="text-gray-700 leading-relaxed">Encuentra los mejores restaurantes, cafeterías y lugares de comida típica antioqueña en Barbosa.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-orange-200 text-orange-800">
+                            Comida Típica
+                        </span>
+                    </div>
+                </div>
 
-        <div>
-            <h3>Comercio y Tiendas</h3>
-            <p>Descubre tiendas locales, centros comerciales y negocios para todas tus necesidades.</p>
-        </div>
+                <div class="group bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🛍️</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Comercio y Tiendas</h3>
+                    <p class="text-gray-700 leading-relaxed">Descubre tiendas locales, centros comerciales y negocios para todas tus necesidades.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-200 text-blue-800">
+                            Comercio Local
+                        </span>
+                    </div>
+                </div>
 
-        <div>
-            <h3>Turismo y Atracciones</h3>
-            <p>Explora los famosos Charcos de Barbosa, el Parque de las Aguas, y otros sitios de interés turístico.</p>
-        </div>
+                <div class="group bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🏖️</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Turismo y Atracciones</h3>
+                    <p class="text-gray-700 leading-relaxed">Explora los famosos Charcos de Barbosa, el Parque de las Aguas, y otros sitios de interés turístico.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-200 text-green-800">
+                            Ecoturismo
+                        </span>
+                    </div>
+                </div>
 
-        <div>
-            <h3>Servicios Públicos</h3>
-            <p>Información sobre servicios municipales, transporte público, y entidades gubernamentales.</p>
-        </div>
+                <div class="group bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🏢</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Servicios Públicos</h3>
+                    <p class="text-gray-700 leading-relaxed">Información sobre servicios municipales, transporte público, y entidades gubernamentales.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-200 text-purple-800">
+                            Servicios
+                        </span>
+                    </div>
+                </div>
 
-        <div>
-            <h3>Eventos y Cultura</h3>
-            <p>Mantente informado sobre las Fiestas de la Piña, eventos culturales y celebraciones locales.</p>
-        </div>
+                <div class="group bg-gradient-to-br from-pink-50 to-pink-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🎆</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Eventos y Cultura</h3>
+                    <p class="text-gray-700 leading-relaxed">Mantente informado sobre las Fiestas de la Piña, eventos culturales y celebraciones locales.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-pink-200 text-pink-800">
+                            Festividades
+                        </span>
+                    </div>
+                </div>
 
-        <div>
-            <h3>Información Práctica</h3>
-            <p>Datos útiles sobre clima, transporte, horarios y servicios esenciales del municipio.</p>
+                <div class="group bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📊</div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Información Práctica</h3>
+                    <p class="text-gray-700 leading-relaxed">Datos útiles sobre clima, transporte, horarios y servicios esenciales del municipio.</p>
+                    <div class="mt-6">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-yellow-200 text-yellow-800">
+                            Datos Útiles
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Sobre Barbosa -->
-    <section id="barbosa">
-        <h2>Sobre Barbosa, Antioquia</h2>
-        
-        <div>
-            <h3>Ubicación Estratégica</h3>
-            <p>Barbosa está ubicado en el extremo norte del Valle de Aburrá, a solo 36 kilómetros de Medellín. Es paso obligado hacia el nordeste del departamento y la costa atlántica.</p>
-        </div>
+    <section id="barbosa" class="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Sobre Barbosa, Antioquia</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Descubre la belleza y riqueza cultural del municipio que BarBot conoce mejor
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">📍</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Ubicación Estratégica</h3>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Barbosa está ubicado en el extremo norte del Valle de Aburrá, a solo 36 kilómetros de Medellín. 
+                        Es paso obligado hacia el nordeste del departamento y la costa atlántica.
+                    </p>
+                </div>
 
-        <div>
-            <h3>Datos Importantes</h3>
-            <ul>
-                <li><strong>Fundación:</strong> 25 de agosto de 1795</li>
-                <li><strong>Población:</strong> Aproximadamente 56,505 habitantes</li>
-                <li><strong>Altitud:</strong> 1,300 metros sobre el nivel del mar</li>
-                <li><strong>Temperatura promedio:</strong> 22.2°C</li>
-                <li><strong>Área:</strong> 206 km²</li>
-            </ul>
-        </div>
+                <div class="bg-white rounded-3xl p-8 shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="text-4xl mr-4">🏢</div>
+                        <h3 class="text-2xl font-bold text-gray-900">Datos Importantes</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-3"></span>
+                            <span><strong>Fundación:</strong> 25 de agosto de 1795</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-3"></span>
+                            <span><strong>Población:</strong> 56,505 habitantes</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
+                            <span><strong>Altitud:</strong> 1,300 msnm</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-orange-500 rounded-full mr-3"></span>
+                            <span><strong>Temperatura:</strong> 22.2°C promedio</span>
+                        </div>
+                        <div class="flex items-center text-gray-700">
+                            <span class="w-2 h-2 bg-red-500 rounded-full mr-3"></span>
+                            <span><strong>Área:</strong> 206 km²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-3xl mb-4">🏞️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Atracciones Principales</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Charcos de Barbosa
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Parque de las Aguas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Iglesia de San Antonio de Padua
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Parque Diego Echavarría Misas
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Morro de la Virgen
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
+                            Camino de los Petroglifos
+                        </li>
+                    </ul>
+                </div>
 
-        <div>
-            <h3>Atracciones Principales</h3>
-            <ul>
-                <li>Charcos de Barbosa</li>
-                <li>Parque de las Aguas</li>
-                <li>Iglesia de San Antonio de Padua</li>
-                <li>Parque Diego Echavarría Misas</li>
-                <li>Morro de la Virgen</li>
-                <li>Camino de los Petroglifos</li>
-            </ul>
-        </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-3xl mb-4">🎉</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Festividades</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li>
+                            <div class="font-semibold text-orange-600">Fiestas de la Piña</div>
+                            <div class="text-sm">Diciembre de cada año</div>
+                        </li>
+                        <li>
+                            <div class="font-semibold text-blue-600">Aniversario del municipio</div>
+                            <div class="text-sm">25 de agosto</div>
+                        </li>
+                        <li>
+                            <div class="font-semibold text-green-600">Fiestas del Tren</div>
+                            <div class="text-sm">Agosto, cada 2 años (El Hatillo)</div>
+                        </li>
+                    </ul>
+                </div>
 
-        <div>
-            <h3>Festividades</h3>
-            <ul>
-                <li><strong>Fiestas de la Piña:</strong> Diciembre de cada año</li>
-                <li><strong>Aniversario del municipio:</strong> 25 de agosto</li>
-                <li><strong>Fiestas del Tren:</strong> Agosto, cada 2 años (Corregimiento El Hatillo)</li>
-            </ul>
-        </div>
-
-        <div>
-            <h3>Economía Local</h3>
-            <p>Barbosa cuenta con industria papelera, textil, turística y agrícola. Destaca la siembra de piña y el turismo gracias a sus atractivos naturales.</p>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="text-3xl mb-4">🏦</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Economía Local</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Barbosa cuenta con industria papelera, textil, turística y agrícola. 
+                        Destaca la siembra de piña y el turismo gracias a sus atractivos naturales.
+                    </p>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Agricultura</span>
+                        <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Turismo</span>
+                        <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Industria</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
